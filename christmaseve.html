@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="demo"></h1>
+
+<script>
+
+String.prototype.repeat = function( num )
+{
+    return new Array( num + 1 ).join( this );
+}
+
+
+
+var oneDay = 24*60*60*1000
+var d = new Date();
+var c = new Date(d.getFullYear(),11,25);
+
+var diffDays = Math.round(Math.abs((d.getTime() - c.getTime())/(oneDay)));
+
+document.getElementById("demo").innerHTML = "It's christmas" + " eve".repeat(diffDays);
+</script>
+
+</body>
+</html>
